@@ -4,10 +4,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   if (!isset($_SESSION['rangStr'])) {
     $output = "Включите изображения!";
   }else{
-    if($_SESSION['rangStr'] == strtolower($_POST['answer']))
-      $output ='Yes!';
+    if($_SESSION['rangStr'] == strtolower($_POST['key']))
+      $output ='Все верно!';
     else
-      $output ='No!';
+      $output ='Вы ошиблись!';
   }
 }
 ?>
@@ -26,8 +26,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       <img src="noise-picture.php">
     </div>
     <div>
-      <label>Введите строку</label>
-      <input type="text" name="answer" size="6">
+      <label>Введите то что вы видете на картинке</label>
+      <input type="text" name="key" size="6">
     </div>
     <input type="submit" value="Подтвердить">
   </form>
